@@ -14,7 +14,7 @@ void swap(int nums[], int i, int j) {
 
 void merge(int nums[], int l, int m, int r) {
 
-    int temp[20];
+    int temp[r-l+1];
     int i = 0;
     int p1 = l;
     int p2 = m + 1;
@@ -42,8 +42,8 @@ void merge(int nums[], int l, int m, int r) {
 
 void mergeSort(int nums[],int l,int r) {
 
-    //Ë¼Â·£º¶¨Òål = 0,r = n-1,È»ºóÒ»Ö±µİ¹é¶ş·Ö¡¢µİ¹é¶ş·Ö¡¢Ò»Ö±µ½l= r£¬È»ºóºÏ²¢ÅÅĞò£¬
-    //×ÜÌåÀ´Ëµ¾ÍÊÇ£¬µİ¹é¶ş·Ö£¬¼ÓºÏ²¢ÅÅĞò
+    //æ€è·¯ï¼šå®šä¹‰l = 0,r = n-1,ç„¶åä¸€ç›´é€’å½’äºŒåˆ†ã€é€’å½’äºŒåˆ†ã€ä¸€ç›´åˆ°l= rï¼Œç„¶ååˆå¹¶æ’åºï¼Œ
+    //æ€»ä½“æ¥è¯´å°±æ˜¯ï¼Œé€’å½’äºŒåˆ†ï¼ŒåŠ åˆå¹¶æ’åº
     if (l == r) {
         return;
     }
@@ -72,12 +72,12 @@ int main() {
     int test[12] = { 4,2,7,10,3,9,100,64,77,92,101,50 };
     n = sizeof(test) / sizeof(test[0]);
 
-    //ÅÅĞòÇ°´òÓ¡
+    //æ’åºå‰æ‰“å°
     printNums(test, n);
 
     mergeSort(test,0,n-1);
 
-    //ÅÅĞòºó´òÓ¡
+    //æ’åºåæ‰“å°
     printNums(test, n);
 
     return 0;
