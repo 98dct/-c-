@@ -14,7 +14,7 @@ void swap(int nums[], int i, int j) {
 
 void merge(int nums[], int l, int m, int r) {
 
-    int temp[r-l+1];
+    int *temp = new int[r-l+1];
     int i = 0;
     int p1 = l;
     int p2 = m + 1;
@@ -37,6 +37,8 @@ void merge(int nums[], int l, int m, int r) {
     for (int j = 0; j < (r - l + 1); j++) {
         nums[l + j] = temp[j];
     }
+    
+    delete[] temp;
 
 }
 
