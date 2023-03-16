@@ -23,7 +23,7 @@ void heapInsert(int nums[],int index) {
 
 void heapify(int nums[], int index, int size) {
     int left = 2 * index + 1;
-    while(left < size) {       //ÒâÎ¶×ÅÓĞº¢×Ó½Úµã
+    while(left < size) {       //æ„å‘³ç€æœ‰å­©å­èŠ‚ç‚¹
         
         int largest = left + 1 < size && nums[left + 1] > nums[left] ? left + 1 : left;
         largest = nums[largest] > nums[index] ? largest : index;
@@ -37,10 +37,10 @@ void heapify(int nums[], int index, int size) {
 }
 
 
-void heapSort(int nums[], int l, int r) {
+void heapSort(int nums[]) {
 
     //for (int i = 0; i < n; i++) {
-        //Ò»¸öÒ»¸öÌí¼ÓĞÎ³É¶Ñ
+        //ä¸€ä¸ªä¸€ä¸ªæ·»åŠ å½¢æˆå †
         //heapInsert(nums,i);
     //}
 
@@ -49,10 +49,10 @@ void heapSort(int nums[], int l, int r) {
         heapify(nums, i, n);
     }
 
-    int size = n;    //¶¨ÒåsizeÎª¶ÑµÄ´óĞ¡
+    int size = n;    //å®šä¹‰sizeä¸ºå †çš„å¤§å°
     swap(nums, 0, --size);
     while (size > 0) {
-        //¶Ñ¶¥ºÍ×îºóÒ»¸öÔªËØ½»»»ºóÔÚ±ä³É¶Ñ
+        //å †é¡¶å’Œæœ€åä¸€ä¸ªå…ƒç´ äº¤æ¢ååœ¨å˜æˆå †
         heapify(nums, 0, size);
         swap(nums, 0, --size);
     }
@@ -73,11 +73,11 @@ int main() {
     int test[12] = { 4,2,7,10,3,9,100,64,77,92,101,50 };
     n = sizeof(test) / sizeof(test[0]);
 
-    //ÅÅĞòÇ°´òÓ¡
+    //æ’åºå‰æ‰“å°
     printNums(test, n);
-    heapSort(test, 0, n - 1);
+    heapSort(test);
 
-    //ÅÅĞòºó´òÓ¡
+    //æ’åºåæ‰“å°
     printNums(test, n);
 
     return 0;
